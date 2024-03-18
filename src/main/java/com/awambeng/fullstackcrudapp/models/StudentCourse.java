@@ -19,11 +19,11 @@ public class StudentCourse {
 
         @ManyToOne
         @JoinColumn(name = "student_id")
-        Student student;
+        private Long student;
 
         @ManyToOne
         @JoinColumn(name = "course_id")
-        Course course;
+        private Long course;
 
         @Temporal(TemporalType.TIMESTAMP)
         @Column(name = "Enrollment Date")
