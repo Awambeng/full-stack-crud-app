@@ -21,11 +21,8 @@ public class CourseServiceImpl implements CourseService{
     }
 
     @Override
-    public Course saveCourse(long id, Course course) {
-        return teacherRepository.findById(id).map(teacher -> {
-            course.setTeacher(teacher);
-            return courseRepository.save(course);
-        }).orElse(null);
+    public Course saveCourse(Course course) {
+        return courseRepository.save(course);
     }
 
     @Override
