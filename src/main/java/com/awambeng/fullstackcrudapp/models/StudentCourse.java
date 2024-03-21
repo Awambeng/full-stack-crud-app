@@ -1,7 +1,6 @@
 package com.awambeng.fullstackcrudapp.models;
 
 import jakarta.persistence.*;
-import jakarta.persistence.JoinColumn;
 import lombok.*;
 
 import java.util.Date;
@@ -18,14 +17,14 @@ public class StudentCourse {
         private Long id;
 
         @ManyToOne
-        @JoinColumn(name = "student_id")
-        private Long student;
+        @JoinColumn(name = "Student_Id")
+        private Student student;
 
         @ManyToOne
-        @JoinColumn(name = "course_id")
-        private Long course;
+        @JoinColumn(name = "Course_Id")
+        private Course course;
 
         @Temporal(TemporalType.TIMESTAMP)
-        @Column(name = "Enrollment Date")
+        @Column(name = "Enrollment_Date")
         private Date enrollDate;
 }

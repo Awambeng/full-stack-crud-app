@@ -3,9 +3,11 @@ package com.awambeng.fullstackcrudapp.services;
 import com.awambeng.fullstackcrudapp.models.Teacher;
 import com.awambeng.fullstackcrudapp.repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TeacherServiceImpl implements TeacherService {
     @Autowired
     private TeacherRepository teacherRepository;

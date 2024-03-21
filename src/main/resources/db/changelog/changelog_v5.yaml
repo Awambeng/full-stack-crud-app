@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: '005-changelog_v5-user-table'
+      author: 'Bolan'
+      changes:
+        - createTable:
+            tableName: user_accounts
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: "First_Name"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Last_Name"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Email"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Password"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false

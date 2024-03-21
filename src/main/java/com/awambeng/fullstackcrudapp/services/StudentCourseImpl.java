@@ -7,9 +7,11 @@ import com.awambeng.fullstackcrudapp.repositories.CourseRepository;
 import com.awambeng.fullstackcrudapp.repositories.StudentCourseRepository;
 import com.awambeng.fullstackcrudapp.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentCourseImpl implements StudentCourseService{
     
     @Autowired
@@ -34,8 +36,8 @@ public class StudentCourseImpl implements StudentCourseService{
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new IllegalArgumentException("Course not found with ID: " + courseId));
 
-        studentCourse.setStudent(student.getId());
-        studentCourse.setCourse(course.getId());
+        studentCourse.setStudent(student);
+        studentCourse.setCourse(course);
 
         return studentCourseRepository.save(studentCourse);
     }

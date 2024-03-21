@@ -19,25 +19,25 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Course Name")
+    @Column(name = "Course_Name")
     private String courseName;
 
     @Column(name = "Description")
     private String description;
 
-    @Column(name = "Course Credit")
+    @Column(name = "Course_Credit")
     private int courseCredit;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "Start Date")
+    @Column(name = "Start_Date")
     private Date startDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "End Date")
+    @Column(name = "End_Date")
     private Date endDate;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Teacher Name")
+    @JoinColumn(name = "Teacher_Id")
     private Teacher teacher;
 
     @OneToMany(mappedBy = "course")

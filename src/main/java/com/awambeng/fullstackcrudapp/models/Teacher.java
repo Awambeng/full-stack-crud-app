@@ -18,20 +18,20 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Teacher Name")
+    @Column(name = "Teacher_Name")
     private String name;
 
-    @Column(name = "Teacher Surname")
+    @Column(name = "Teacher_Surname")
     private String surname;
 
     @Column(name = "Gender")
     private String gender;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "Date Of Birth")
+    @Column(name = "Date_Of_Birth")
     private Date dateOfBirth;
 
-    @Column(name = "Phone Number")
+    @Column(name = "Phone_Number")
     private String phoneNumber;
 
     @OneToMany(mappedBy = "teacher", cascade = {

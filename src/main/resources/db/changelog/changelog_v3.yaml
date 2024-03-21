@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: '003-changelog_v3-course-table'
+      author: 'Bolan'
+      changes:
+        - createTable:
+            tableName: course
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: "Course_Name"
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "Description"
+                  type: TEXT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "Course_Credit"
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "Start_Date"
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "End_Date"
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "Teacher_Id"
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+            foreignKeys:
+              - foreignKey:
+                  baseTableName: course
+                  baseColumnNames: teacher_id
+                  referencedTableName: teacher
+                  referencedColumnNames: id
+                  constraintName: fk_course_teacher
+                  onDelete: CASCADE
+                  onUpdate: RESTRICT
