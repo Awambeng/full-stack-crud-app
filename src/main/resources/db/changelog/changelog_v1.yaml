@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: '001-changelog_v1-student-table'
+      author: 'Bolan'
+      changes:
+        - createTable:
+            tableName: student
+            columns:
+              - column:
+                  name: "id"
+                  constraints:
+                    primaryKey: true
+                  type: varchar(64)
+              - column:
+                  name: "Student_Name"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Student_Surname"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Gender"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Date_Of_Birth"
+                  type: Date
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: "Phone_Number"
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+                    unique: false

@@ -18,20 +18,20 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Student Name")
+    @Column(name = "Student_Name")
     private String name;
 
-    @Column(name = "Student Surname")
+    @Column(name = "Student_Surname")
     private String surname;
 
     @Column(name = "Gender")
     private String gender;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "Date Of Birth")
+    @Column(name = "Date_Of_Birth")
     private Date dateOfBirth;
 
-    @Column(name = "Phone Number")
+    @Column(name = "Phone_Number")
     private String phoneNumber;
 
     @OneToMany(mappedBy = "student")
